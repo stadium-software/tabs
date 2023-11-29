@@ -83,13 +83,13 @@ function activateTab(e) {
 ```
 
 ## Page Setup
-1. Drag a *Container* control to a page
+1. Drag a *Container* control to a page. This will be the main tabs container
 2. Assign a class called "stadium-tabs" to the *Container* control
 3. Drag *Label* controls horizontally next to each other into the *Container* to create tabs
 4. Use the *Label* *Text* property for the tab text
 5. Drag *Container* controls horizontally next to each other under the Labels to create tab content areas
-6. Drag controls you wish to show inside the tab into the container
-7. NOTE: There must be an equal number of *Label* and *Container* controls 
+6. Drag controls you wish to show inside the tabs into the containers
+7. NOTE: There must be an equal number of *Label* and *Container* controls as direct children inside the main tabs container
 
 ![](images/StadiumDesignerTabsView.png)
 
@@ -99,7 +99,7 @@ function activateTab(e) {
 ## Horizontal / Vertical Display
 By default all tab controls are shown horizontally 
 
-To display tabs vertically, add a class called "tabs-vertical" to the main container control
+To display tabs vertically, add a class called "tabs-vertical" to the main tabs container control
 
 # Styling
 Various elements in this module can be styled using the two CSS files in this repo
