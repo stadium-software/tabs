@@ -97,9 +97,9 @@ function activateTab(e) {
 1. Drag the Global Script called "Tabs" into the Page.Load event handler
 
 ## Horizontal / Vertical Display
-By default all tab controls are shown horizontally. 
+By default all tab controls are shown horizontally 
 
-To create vertical tabs, add a class called "tabs-vertical" to the main container control. 
+To display tabs vertically, add a class called "tabs-vertical" to the main container control
 
 # Styling
 Various elements in this module can be styled using the two CSS files in this repo
