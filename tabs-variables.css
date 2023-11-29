@@ -1,0 +1,232 @@
+/*---Tabs Variables---*/
+
+:root {
+    --stadium-tab-label-border-top-color: #ccc;
+    --stadium-tab-label-border-right-color: #ccc;
+    --stadium-tab-label-border-bottom-color: #ccc;
+    --stadium-tab-label-border-left-color: #ccc;
+    --stadium-tab-label-border-radius: 0px;
+
+    --stadium-tab-label-border-top-size: 1px;
+    --stadium-tab-label-border-right-size: 1px;
+    --stadium-tab-label-border-bottom-size: 1px;
+    --stadium-tab-label-border-left-size: 1px;
+
+    --stadium-tab-label-top-padding: 16px;
+    --stadium-tab-label-right-padding: 32px;
+    --stadium-tab-label-bottom-padding: 16px;
+    --stadium-tab-label-left-padding: 32px;
+
+    --stadium-tab-label-background-color: #f9f9f9;
+    --stadium-tab-label-font-color: inherit;
+    --stadium-tab-label-font-weight: normal;
+    --stadium-tab-label-font-case: uppercase;
+    --stadium-tab-label-hover-background-color: #f5f5f5;
+    --stadium-tab-label-font-weight: normal;
+    --stadium-tab-label-hover-font-color: #333;
+    --stadium-tab-label-hover-font-weight: normal;
+
+    --stadium-tab-active-label-border-top-color: #ccc;
+    --stadium-tab-active-label-border-right-color: #ccc;
+    --stadium-tab-active-label-border-bottom-color: #fff;
+    --stadium-tab-active-label-border-left-color: #ccc;
+
+    --stadium-tab-active-label-border-top-size: 1px;
+    --stadium-tab-active-label-border-right-size: 1px;
+    --stadium-tab-active-label-border-bottom-size: 0;
+    --stadium-tab-active-label-border-left-size: 1px;
+
+    --stadium-tab-active-label-background-color: white;
+    --stadium-tab-active-label-font-color: #333;
+    --stadium-tab-active-label-font-weight: normal;
+
+    --stadium-tab-content-border-top-color: #ccc;
+    --stadium-tab-content-border-right-color: #ccc;
+    --stadium-tab-content-border-bottom-color: #ccc;
+    --stadium-tab-content-border-left-color: #ccc;
+
+    --stadium-tab-content-border-top-size: 1px;
+    --stadium-tab-content-border-right-size: 1px;
+    --stadium-tab-content-border-bottom-size: 1px;
+    --stadium-tab-content-border-left-size: 1px;
+
+    --stadium-tab-content-top-padding: 16px;
+    --stadium-tab-content-right-padding: 32px;
+    --stadium-tab-content-bottom-padding: 16px;
+    --stadium-tab-content-left-padding: 32px;
+
+    --stadium-tab-bottom-border-animation-speed: 0s;
+}
+
+/*---Tabs Customised Example Variables---*/
+
+.tabs-fancy {
+    --stadium-tab-label-border-top-color: #fff;
+    --stadium-tab-label-border-right-color: #fff;
+    --stadium-tab-label-border-bottom-color: #ccc;
+    --stadium-tab-label-border-left-color: #fff;
+    --stadium-tab-label-border-radius: 4px;
+
+    --stadium-tab-label-border-top-size: 1px;
+    --stadium-tab-label-border-right-size: 1px;
+    --stadium-tab-label-border-bottom-size: 2px;
+    --stadium-tab-label-border-left-size: 1px;
+
+    --stadium-tab-label-top-padding: 16px;
+    --stadium-tab-label-right-padding: 32px;
+    --stadium-tab-label-bottom-padding: 16px;
+    --stadium-tab-label-left-padding: 32px;
+
+    --stadium-tab-label-background-color: #fff;
+    --stadium-tab-label-font-color: #333;
+    --stadium-tab-label-font-weight: normal;
+    --stadium-tab-label-font-case: uppercase;
+    --stadium-tab-label-hover-background-color: #fff;
+    --stadium-tab-label-hover-font-color: #333;
+    --stadium-tab-label-hover-font-weight: normal;
+
+    --stadium-tab-active-label-border-top-color: #fff;
+    --stadium-tab-active-label-border-right-color: #fff;
+    --stadium-tab-active-label-border-bottom-color: #ccc;
+    --stadium-tab-active-label-border-left-color: #fff;
+
+    --stadium-tab-active-label-border-top-size: 1px;
+    --stadium-tab-active-label-border-right-size: 1px;
+    --stadium-tab-active-label-border-bottom-size: 2px;
+    --stadium-tab-active-label-border-left-size: 1px;
+
+    --stadium-tab-active-label-background-color: white;
+    --stadium-tab-active-label-font-color: #2196f3;
+    --stadium-tab-active-label-font-weight: bold;
+
+    --stadium-tab-content-border-top-color: #fff;
+    --stadium-tab-content-border-right-color: #fff;
+    --stadium-tab-content-border-bottom-color: #fff;
+    --stadium-tab-content-border-left-color: #fff;
+
+    --stadium-tab-content-border-top-size: 1px;
+    --stadium-tab-content-border-right-size: 1px;
+    --stadium-tab-content-border-bottom-size: 2px;
+    --stadium-tab-content-border-left-size: 1px;
+
+    --stadium-tab-content-top-padding: 16px;
+    --stadium-tab-content-right-padding: 32px;
+    --stadium-tab-content-bottom-padding: 16px;
+    --stadium-tab-content-left-padding: 32px;
+
+    --stadium-tab-bottom-border-animation-speed: 0.6s;
+}
+
+.tabs-blue {
+    --stadium-tab-label-border-top-color: #fff;
+    --stadium-tab-label-border-right-color: #fff;
+    --stadium-tab-label-border-bottom-color: #fff;
+    --stadium-tab-label-border-left-color: #fff;
+    --stadium-tab-label-border-radius: 4px;
+
+    --stadium-tab-label-border-top-size: 1px;
+    --stadium-tab-label-border-right-size: 1px;
+    --stadium-tab-label-border-bottom-size: 1px;
+    --stadium-tab-label-border-left-size: 1px;
+
+    --stadium-tab-label-top-padding: 16px;
+    --stadium-tab-label-right-padding: 32px;
+    --stadium-tab-label-bottom-padding: 16px;
+    --stadium-tab-label-left-padding: 32px;
+
+    --stadium-tab-label-background-color: #2196f3;
+    --stadium-tab-label-font-color: #ffffff;
+    --stadium-tab-label-font-weight: normal;
+    --stadium-tab-label-font-case: uppercase;
+    --stadium-tab-label-hover-background-color: #1976d2;
+    --stadium-tab-label-hover-font-color: #fff;
+    --stadium-tab-label-hover-font-weight: normal;
+
+    --stadium-tab-active-label-border-top-size: 1px;
+    --stadium-tab-active-label-border-right-size: 1px;
+    --stadium-tab-active-label-border-bottom-size: 1px;
+    --stadium-tab-active-label-border-left-size: 1px;
+
+    --stadium-tab-active-label-border-top-color: #575757;
+    --stadium-tab-active-label-border-right-color: #575757;
+    --stadium-tab-active-label-border-bottom-color: #fff;
+    --stadium-tab-active-label-border-left-color: #575757;
+
+    --stadium-tab-active-label-background-color: white;
+    --stadium-tab-active-label-font-color: #333;
+    --stadium-tab-active-label-font-weight: normal;
+
+    --stadium-tab-content-border-top-color: #333;
+    --stadium-tab-content-border-right-color: #fff;
+    --stadium-tab-content-border-bottom-color: #fff;
+    --stadium-tab-content-border-left-color: #fff;
+
+    --stadium-tab-content-border-top-size: 1px;
+    --stadium-tab-content-border-right-size: 1px;
+    --stadium-tab-content-border-bottom-size: 1px;
+    --stadium-tab-content-border-left-size: 1px;
+
+    --stadium-tab-content-top-padding: 16px;
+    --stadium-tab-content-right-padding: 32px;
+    --stadium-tab-content-bottom-padding: 16px;
+    --stadium-tab-content-left-padding: 32px;
+
+    --stadium-tab-bottom-border-animation-speed: 0s;
+}
+
+.tabs-vertical {
+    --stadium-tab-label-border-top-color: #2196f3;
+    --stadium-tab-label-border-right-color: #fff;
+    --stadium-tab-label-border-bottom-color: #fff;
+    --stadium-tab-label-border-left-color: #fff;
+    --stadium-tab-label-border-radius: 4px;
+
+    --stadium-tab-label-border-top-size: 1px;
+    --stadium-tab-label-border-right-size: 1px;
+    --stadium-tab-label-border-bottom-size: 1px;
+    --stadium-tab-label-border-left-size: 1px;
+
+    --stadium-tab-label-top-padding: 16px;
+    --stadium-tab-label-right-padding: 32px;
+    --stadium-tab-label-bottom-padding: 16px;
+    --stadium-tab-label-left-padding: 32px;
+
+    --stadium-tab-label-background-color: #2196f3;
+    --stadium-tab-label-font-color: #ffffff;
+    --stadium-tab-label-font-weight: normal;
+    --stadium-tab-label-font-case: uppercase;
+    --stadium-tab-label-hover-background-color: #1976d2;
+    --stadium-tab-label-hover-font-color: #fff;
+    --stadium-tab-label-hover-font-weight: normal;
+
+    --stadium-tab-active-label-border-top-size: 1px;
+    --stadium-tab-active-label-border-right-size: 0;
+    --stadium-tab-active-label-border-bottom-size: 1px;
+    --stadium-tab-active-label-border-left-size: 1px;
+
+    --stadium-tab-active-label-border-top-color: #575757;
+    --stadium-tab-active-label-border-right-color: #fff;
+    --stadium-tab-active-label-border-bottom-color: #575757;
+    --stadium-tab-active-label-border-left-color: #575757;
+
+    --stadium-tab-active-label-background-color: white;
+    --stadium-tab-active-label-font-color: #333;
+    --stadium-tab-active-label-font-weight: normal;
+
+    --stadium-tab-content-border-top-color: #333;
+    --stadium-tab-content-border-right-color: #575757;
+    --stadium-tab-content-border-bottom-color: #575757;
+    --stadium-tab-content-border-left-color: #575757;
+
+    --stadium-tab-content-border-top-size: 1px;
+    --stadium-tab-content-border-right-size: 1px;
+    --stadium-tab-content-border-bottom-size: 1px;
+    --stadium-tab-content-border-left-size: 1px;
+
+    --stadium-tab-content-top-padding: 16px;
+    --stadium-tab-content-right-padding: 32px;
+    --stadium-tab-content-bottom-padding: 16px;
+    --stadium-tab-content-left-padding: 32px;
+
+    --stadium-tab-bottom-border-animation-speed: 0s;
+}
