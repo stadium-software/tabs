@@ -2,7 +2,7 @@
 
 Displaying controls in tabs
 
-https://github.com/stadium-software/tabs/assets/2085324/8cb167a6-3909-47c7-b719-9d2bccced392
+https://github.com/stadium-software/tabs/assets/2085324/5e37ae8d-5013-44b8-8e6f-523744648eb5
 
 ## Sample applications
 This repo contains one Stadium 6.6 application
