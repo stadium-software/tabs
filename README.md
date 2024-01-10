@@ -103,6 +103,11 @@ By default all tab controls are shown horizontally
 
 To display tabs vertically, add a class called "tabs-vertical" to the main tabs container control
 
+## Tab Icons
+To display icons in tabs, the [Icons Module](https://github.com/stadium-software/icons) must be implemented in the application and the Icons script needs to be called in the Page.Load event handler. You can then apply classes to the tab label controls as described in the [Icons Module](https://github.com/stadium-software/icons) to display icons in your tabs. 
+
+![](images/StadiumDesignerIcons.png)
+
 # Styling
 Various elements in this module can be styled using the two CSS files in this repo
 
