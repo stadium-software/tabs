@@ -111,6 +111,10 @@ To display icons in tabs, the [Icons Module](https://github.com/stadium-software
 # Styling
 Various elements in this module can be styled using the two CSS files in this repo
 
+## Icon Style Classes
+
+This repo supports the use of classes for the positioning, sizing and colouring of icons as described [here](https://github.com/stadium-software/icons?tab=readme-ov-file#icon-style-classes)
+
 ## Applying the CSS
 
 **Stadium 6.6 or higher**
