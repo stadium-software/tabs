@@ -18,7 +18,7 @@ This repo contains one Stadium 6.6 application
 1. Create a Global Script and name it "Tabs"
 2. Drag a Javascript action into the script and paste the Javascript below unaltered into the action
 ```javascript
-/* Stadium Script Version 1.0 */
+/* Stadium Script Version 1.0 https://github.com/stadium-software/tabs */
 initTabs();
 
 function initTabs() {
