@@ -147,7 +147,3 @@ In order to use one of the custom examples provided in the example application
 
 ## CSS Upgrading
 To upgrade the CSS in this module, follow the [steps outlined in this repo](https://github.com/stadium-software/samples-upgrading)
-
-# Optional Custom Development
-1. Allowing users to save searches to the database (save generated search phase)
-2. Providing a dropdown for users to apply previously saved searches (populate search field with previously saved phrase)
