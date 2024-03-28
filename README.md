@@ -112,10 +112,8 @@ To display icons in tabs, the [Icons Module](https://github.com/stadium-software
 
 This repo supports the use of classes for the positioning, sizing and colouring of icons as described [here](https://github.com/stadium-software/icons?tab=readme-ov-file#icon-style-classes)
 
-# Styling
-Various elements in this module can be styled using the two CSS files in this repo
-
 ## Applying the CSS
+The CSS below is required for the correct functioning of the module. Some elements can be [customised](#customising-css) using a variables CSS file. 
 
 **Stadium 6.6 or higher**
 1. Create a folder called "CSS" inside of your Embedded Files in your application
