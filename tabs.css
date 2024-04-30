@@ -74,7 +74,7 @@
         background-color: var(--stadium-tab-active-label-background-color);
         cursor: default;
         pointer-events: none;
-        
+
         span, .btn-link {
             color: var(--stadium-tab-active-label-font-color);
             font-weight: var(--stadium-tab-active-label-font-weight);
@@ -128,6 +128,15 @@
         border-bottom-left-radius: var(--stadium-tab-label-border-radius);
         border-top-right-radius: 0;
         border-bottom-right-radius: 0;
+    }
+
+    .tablabel:has(+ .tablabel) {
+        border-right: var(--stadium-tab-active-label-border-right-size) solid var(--stadium-tab-active-label-border-right-color);
+    }
+    
+    .tablabel.active-tab {
+        border-right: 0;
+        border-bottom: var(--stadium-tab-content-border-bottom-size) solid var(--stadium-tab-content-border-bottom-color);
     }
 
     .tabcontent {
