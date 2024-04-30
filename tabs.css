@@ -1,9 +1,11 @@
-/* CSS Version 1.0 https://github.com/stadium-software/tabs */
+/*---Tabs---*/
+
 .container-layout.stadium-tabs {
     overflow: hidden;
     margin-top: 10px;
+    visibility: hidden;
 
-    & .tab-label-container {
+    .tab-label-container {
         position: relative;
         display: flex;
         width: -webkit-fit-content;
@@ -11,13 +13,13 @@
         width: fit-content;
     }
 
-    & .tab-content-container {
+    .tab-content-container {
         display: grid;
         grid-template-columns: 1fr;
         grid-template-rows: 1fr;
     }
 
-    & .tab-label-container::after {
+    .tab-label-container::after {
         content: "";
         position: absolute;
         left: 0;
@@ -31,7 +33,7 @@
         background: var(--stadium-tab-active-label-font-color);
     }
 
-    & .tablabel {
+    .tablabel {
         border-top: var(--stadium-tab-label-border-top-size) solid var(--stadium-tab-label-border-top-color);
         border-right: var(--stadium-tab-label-border-right-size) solid var(--stadium-tab-label-border-right-color);
         border-bottom: var(--stadium-tab-label-border-bottom-size) solid var(--stadium-tab-label-border-bottom-color);
@@ -49,32 +51,39 @@
         font-weight: var(--stadium-tab-label-font-weight);
         text-transform: var(--stadium-tab-label-font-case);
 
-        & span {
+        span, a {
             user-select: none;
         }
     }
 
-    & .tablabel:has(+ .tablabel) {
+    .tablabel:has(+ .tablabel) {
         border-right: 0;
     }
 
-    & .tablabel:hover {
+    .tablabel:hover {
         background-color: var(--stadium-tab-label-hover-background-color);
         color: var(--stadium-tab-label-hover-font-color);
         font-weight: var(--stadium-tab-label-hover-font-weight);
     }
 
-    & .tablabel.active {
+    .tablabel.active-tab {
         border-top: var(--stadium-tab-active-label-border-top-size) solid var(--stadium-tab-active-label-border-top-color);
         border-right: var(--stadium-tab-active-label-border-right-size) solid var(--stadium-tab-active-label-border-right-color);
         border-bottom: var(--stadium-tab-active-label-border-bottom-size) solid var(--stadium-tab-active-label-border-bottom-color);
         border-left: var(--stadium-tab-active-label-border-left-size) solid var(--stadium-tab-active-label-border-left-color);
         background-color: var(--stadium-tab-active-label-background-color);
-        color: var(--stadium-tab-active-label-font-color);
-        font-weight: var(--stadium-tab-active-label-font-weight);
+        cursor: default;
+        pointer-events: none;
+        
+        span, .btn-link {
+            color: var(--stadium-tab-active-label-font-color);
+            font-weight: var(--stadium-tab-active-label-font-weight);
+            cursor: default;
+            pointer-events: none;
+        }
     }
 
-    & .tabcontent {
+    .tabcontent {
         display: block;
         border: 0;
         padding: 0;
@@ -88,7 +97,7 @@
         }
     }
 
-    & .tabcontent.active {
+    .tabcontent.active-tab {
         display: block;
         padding: var(--stadium-tab-content-top-padding) var(--stadium-tab-content-right-padding) var(--stadium-tab-content-bottom-padding) var(--stadium-tab-content-right-padding);
         border-top: var(--stadium-tab-content-border-top-size) solid var(--stadium-tab-content-border-top-color);
@@ -106,13 +115,13 @@
 .container-layout.tabs-vertical {
     display: flex;
 
-    & .stack-layout-container:nth-child(1),
-    & .stack-layout-container:nth-child(2) {
+    .stack-layout-container:nth-child(1),
+    .stack-layout-container:nth-child(2) {
         display: flex;
         flex-direction: column;
     }
 
-    & .tablabel {
+    .tablabel {
         top: 0;
         left: 1px;
         border-top-left-radius: var(--stadium-tab-label-border-radius);
@@ -121,7 +130,23 @@
         border-bottom-right-radius: 0;
     }
 
-    & .tabcontent {
+    .tabcontent {
         flex-grow: 1;
     }
+}
+
+.menu-container.stadium-tabs {
+    display: block;
+    .active-menu-item,
+    .active-menu-item:hover {
+        background-color: white;
+        color: #2196f3;
+    }
+}
+.stack-layout-container:has(.menu-container.stadium-tabs) ~.stack-layout-container div {
+    margin-top: 0;
+    padding: 10px;
+    border-right: 1px solid grey;
+    border-bottom: 1px solid grey;
+    border-left: 1px solid grey;
 }

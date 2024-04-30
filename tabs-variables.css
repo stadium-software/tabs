@@ -1,5 +1,4 @@
-/* CSS Version 1.0 https://github.com/stadium-software/tabs */
-:root {
+.stadium-tabs {
     --stadium-tab-label-border-top-color: #ccc;
     --stadium-tab-label-border-right-color: #ccc;
     --stadium-tab-label-border-bottom-color: #ccc;
@@ -36,8 +35,8 @@
     --stadium-tab-active-label-border-left-size: 1px;
 
     --stadium-tab-active-label-background-color: white;
-    --stadium-tab-active-label-font-color: #333;
-    --stadium-tab-active-label-font-weight: normal;
+    --stadium-tab-active-label-font-color: #777;
+    --stadium-tab-active-label-font-weight: bold;
 
     --stadium-tab-content-border-top-color: #ccc;
     --stadium-tab-content-border-right-color: #ccc;
@@ -57,9 +56,7 @@
     --stadium-tab-bottom-border-animation-speed: 0s;
 }
 
-/*---Tabs Customised Example Variables---*/
-
-.tabs-fancy {
+.tabs-material {
     --stadium-tab-label-border-top-color: #fff;
     --stadium-tab-label-border-right-color: #fff;
     --stadium-tab-label-border-bottom-color: #ccc;
@@ -173,7 +170,7 @@
     --stadium-tab-bottom-border-animation-speed: 0s;
 }
 
-.tabs-vertical {
+.tabs-blue-vertical {
     --stadium-tab-label-border-top-color: #2196f3;
     --stadium-tab-label-border-right-color: #fff;
     --stadium-tab-label-border-bottom-color: #fff;

@@ -1,15 +1,16 @@
 # Tabs
 
-Displaying controls in tabs
+Displaying controls in tabs. Use multi-page tabs to keep the number of controls a page low. 
 
 https://github.com/stadium-software/tabs/assets/2085324/5e37ae8d-5013-44b8-8e6f-523744648eb5
 
-## Sample applications
-This repo contains one Stadium 6.6 application
-[Tabs.sapz](Stadium6/Tabs.sapz?raw=true)
-
 ## Version
-1.0
+1.1
+
+## Changes
+1.1 Added support for multi-page tabs
+
+# Common Setup
 
 ## Application Setup
 1. Check the *Enable Style Sheet* checkbox in the application properties
@@ -18,7 +19,7 @@ This repo contains one Stadium 6.6 application
 1. Create a Global Script and name it "Tabs"
 2. Drag a Javascript action into the script and paste the Javascript below unaltered into the action
 ```javascript
-/* Stadium Script Version 1.0 https://github.com/stadium-software/tabs */
+/* Stadium Script Version 1.1 https://github.com/stadium-software/tabs */
 initTabs();
 
 function initTabs() {
@@ -29,19 +30,26 @@ function initTabs() {
         let contentContainer = tabContainers[i].querySelector(".stack-layout-container:nth-child(2)");
         contentContainer.classList.add("tab-content-container");
         let tabContent = tabContainers[i].querySelectorAll(".stack-layout-container:has(> .container-layout)")[0].children;
-        tabContent[0].classList.add("active");
+        
         for (let j = 0; j < tabContent.length; j++) {
             tabContent[j].classList.add("tabcontent");
             tabContent[j].setAttribute("tabindex", j);
         }
-        let tabLabel = tabContainers[i].querySelectorAll(".stack-layout-container:has(> .label-container)")[0].children;
-        tabLabel[0].classList.add("active");
+        let tabLabel = tabContainers[i].querySelectorAll(".stack-layout-container:has(> .label-container, > .link-container)")[0].children;
         for (let j = 0; j < tabLabel.length; j++) {
             tabLabel[j].classList.add("tablabel");
             tabLabel[j].setAttribute("tabindex", j);
             tabLabel[j].addEventListener("click", activateTab);
         }
-        slideBorder(labelContainer, tabLabel[0], tabLabel[0]);
+        let tabIndex = 0;
+        let activeTab = tabContainers[i].querySelector(".active-tab");
+        if (activeTab) {
+            tabIndex = activeTab.getAttribute("tabindex");
+        }
+        tabContent[tabIndex].classList.add("active-tab");
+        tabLabel[tabIndex].classList.add("active-tab");
+        slideBorder(labelContainer, tabLabel[tabIndex], tabLabel[tabIndex]);
+        tabContainers[i].style.visibility = "visible";
     }
 }
 function slideBorder(tabsC, el, active) {
@@ -69,22 +77,30 @@ function slideBorder(tabsC, el, active) {
 }
 function activateTab(e) {
     let clickedEl = e.target;
-    let labelContainer = clickedEl.closest(".stadium-tabs").querySelector(".stack-layout-container:nth-child(1)");
-    let tabs = clickedEl.closest(".stadium-tabs");
-    let oldTabLabel = tabs.querySelector(".tablabel.active");
-    let oldTabContent = tabs.querySelector(".tabcontent.active");
-    let newTabLabel = clickedEl.closest(".tablabel");
-    let newTabIndex = newTabLabel.getAttribute("tabindex");
-    let newTabContent = tabs.querySelector(".tabcontent[tabindex='" + newTabIndex + "']");
-    oldTabLabel.classList.remove("active");
-    newTabLabel.classList.add("active");
-    oldTabContent.classList.remove("active");
-    newTabContent.classList.add("active");
-    slideBorder(labelContainer, newTabLabel, oldTabLabel);
+    let link = clickedEl.querySelector("a");
+    if (link) {
+        link.click();
+    } else {
+        let labelContainer = clickedEl.closest(".stadium-tabs").querySelector(".stack-layout-container:nth-child(1)");
+        let tabs = clickedEl.closest(".stadium-tabs");
+        let oldTabLabel = tabs.querySelector(".tablabel.active-tab");
+        let oldTabContent = tabs.querySelector(".tabcontent.active-tab");
+        let newTabLabel = clickedEl.closest(".tablabel");
+        let newTabIndex = newTabLabel.getAttribute("tabindex");
+        let newTabContent = tabs.querySelector(".tabcontent[tabindex='" + newTabIndex + "']");
+        oldTabLabel.classList.remove("active-tab");
+        newTabLabel.classList.add("active-tab");
+        oldTabContent.classList.remove("active-tab");
+        newTabContent.classList.add("active-tab");
+        slideBorder(labelContainer, newTabLabel, oldTabLabel);
+    }
 }
 ```
 
-## Page Setup
+## Page.Load Setup
+1. Drag the Global Script called "Tabs" into the Page.Load event handler of each page where tabs are to be shown
+
+## Single-Page Setup
 1. Drag a *Container* control to a page. This will be the main tabs container
 2. Assign a class called "stadium-tabs" to the *Container* control
 3. Drag *Label* controls horizontally next to each other into the *Container* to create tabs
@@ -95,8 +111,21 @@ function activateTab(e) {
 
 ![](images/StadiumDesignerTabsView.png)
 
-## Page.Load Setup
-1. Drag the Global Script called "Tabs" into the Page.Load event handler
+## Multi-Page Setup
+In the multi-page setup, we will create the same set of tabs as in thge single-page setup, but instead of *Label* controls for text, we will use *Link* controls. When users click on a tab, the link contained therein must navigate them to another page where we will show the same set of tabs. On each page where we show the tabs, we will indicate which tab should be the active one. 
+
+1. Drag *Container* controls to each page where this set of tabs are to show
+2. Assign a class called "stadium-tabs" to each *Container* control
+3. Drag *Link* controls horizontally next to each other into the *Container* to create tabs
+4. Use the *Link* *Text* property for the tab text and the *Destination* property to navigate between pages / tabs
+5. Add a class called "active-tab" to one *Link* control on each page. The control with this class will be active on the page. 
+6. Drag *Container* controls horizontally next to each other under the Labels to create tab content areas
+7. Drag controls you wish to show inside the tabs into the containers. You only ever need content for the active tab. All other tabs can remain empty. 
+8. NOTE: As each page will only ever show one tab, the other tabs do not require any content and only need an empty content container
+
+![](images/StadiumDesignerMultiPageTabsView.png)
+
+# Display Options
 
 ## Horizontal / Vertical Display
 By default all tab controls are shown horizontally 
