@@ -2,7 +2,7 @@
 
 Displaying controls in tabs. Use multi-page tabs to keep the number of controls a page low. 
 
-https://github.com/stadium-software/tabs/assets/2085324/5e37ae8d-5013-44b8-8e6f-523744648eb5
+https://github.com/stadium-software/tabs/assets/2085324/dc0c3b27-b805-4bab-97be-a19b7ae7bfa7
 
 ## Version
 1.1
