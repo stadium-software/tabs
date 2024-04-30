@@ -118,7 +118,7 @@ In the multi-page setup, we will create the same set of tabs as in thge single-p
 2. Assign a class called "stadium-tabs" to each *Container* control
 3. Drag *Link* controls horizontally next to each other into the *Container* to create tabs
 4. Use the *Link* *Text* property for the tab text and the *Destination* property to navigate between pages / tabs
-5. Add a class called "active-tab" to one *Link* control on each page. The control with this class will be active on the page. 
+5. Add a class called "active-tab" to one *Link* control on each page. The control with this class will become the active tab on the page. 
 6. Drag *Container* controls horizontally next to each other under the Labels to create tab content areas
 7. Drag controls you wish to show inside the tabs into the containers. You only ever need content for the active tab. All other tabs can remain empty. 
 8. NOTE: As each page will only ever show one tab, the other tabs do not require any content and only need an empty content container
