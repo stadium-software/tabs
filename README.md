@@ -9,6 +9,7 @@ https://github.com/stadium-software/tabs/assets/2085324/dc0c3b27-b805-4bab-97be-
 
 ## Changes
 1.1 Added support for multi-page tabs
+1.2 Added setting selected tab programatically (update JS)
 
 # Common Setup
 
@@ -17,40 +18,75 @@ https://github.com/stadium-software/tabs/assets/2085324/dc0c3b27-b805-4bab-97be-
 
 ## Global Script Setup
 1. Create a Global Script and name it "Tabs"
-2. Drag a Javascript action into the script and paste the Javascript below unaltered into the action
+2. Add an input parameter to the Global Script
+   1. SelectedTab
+3. Drag a Javascript action into the script and paste the Javascript below unaltered into the action
 ```javascript
-/* Stadium Script Version 1.1 https://github.com/stadium-software/tabs */
+/* Stadium Script Version 1.2 https://github.com/stadium-software/tabs */
+let selectedTab = ~.Parameters.Input.SelectedTab;
+if (!isNumber(selectedTab)) {
+    selectedTab = 1;
+}
 initTabs();
-
 function initTabs() {
     let tabContainers = document.querySelectorAll(".stadium-tabs");
     for (let i = 0; i < tabContainers.length; i++) {
+        if (tabContainers[i].querySelector('.tab-label-container')) {
+            setActiveTab(tabContainers[i], selectedTab);
+            continue;
+        }
         let labelContainer = tabContainers[i].querySelector(".stack-layout-container:nth-child(1)");
         labelContainer.classList.add("tab-label-container");
         let contentContainer = tabContainers[i].querySelector(".stack-layout-container:nth-child(2)");
         contentContainer.classList.add("tab-content-container");
-        let tabContent = tabContainers[i].querySelectorAll(".stack-layout-container:has(> .container-layout)")[0].children;
-        
-        for (let j = 0; j < tabContent.length; j++) {
-            tabContent[j].classList.add("tabcontent");
-            tabContent[j].setAttribute("tabindex", j);
-        }
-        let tabLabel = tabContainers[i].querySelectorAll(".stack-layout-container:has(> .label-container, > .link-container)")[0].children;
+        let tabLabel = labelContainer.children;
         for (let j = 0; j < tabLabel.length; j++) {
             tabLabel[j].classList.add("tablabel");
-            tabLabel[j].setAttribute("tabindex", j);
-            tabLabel[j].addEventListener("click", activateTab);
+            tabLabel[j].setAttribute("tabnumber", j + 1);
+            tabLabel[j].addEventListener("click", selectTab);
         }
-        let tabIndex = 0;
-        let activeTab = tabContainers[i].querySelector(".active-tab");
-        if (activeTab) {
-            tabIndex = activeTab.getAttribute("tabindex");
+        let tabContent = contentContainer.children;
+        for (let j = 0; j < tabContent.length; j++) {
+            tabContent[j].classList.add("tabcontent");
+            tabContent[j].setAttribute("tabnumber", j + 1);
         }
-        tabContent[tabIndex].classList.add("active-tab");
-        tabLabel[tabIndex].classList.add("active-tab");
-        slideBorder(labelContainer, tabLabel[tabIndex], tabLabel[tabIndex]);
+        if (tabContainers[i].querySelector(".active-tab")) {
+            selectedTab = tabContainers[i].querySelector(".active-tab").getAttribute("tabnumber");
+        }
+        setActiveTab(tabContainers[i], selectedTab);
         tabContainers[i].style.visibility = "visible";
     }
+}
+function setActiveTab(tabsContainer, tabNo) {
+    let prevSelectedLbl;
+    let activeEls = tabsContainer.querySelectorAll(".active-tab");
+    for (let i=0; i < activeEls.length; i++){
+        activeEls[i].classList.remove("active-tab");
+        if (activeEls[i].classList.contains("tablabel")) {
+            prevSelectedLbl = activeEls[i];
+        }
+    }
+    let tabcontent = tabsContainer.querySelector(".tab-content-container .tabcontent:nth-child(" + tabNo + ")");
+    let tablabel = tabsContainer.querySelector(".tab-label-container .tablabel:nth-child(" + tabNo + ")");
+    tabcontent.classList.add("active-tab");
+    tablabel.classList.add("active-tab");
+    if (tabsContainer.classList.contains("tabs-fancy")) slideBorder(tablabel.closest(".tab-label-container"), tablabel, prevSelectedLbl || tabsContainer.querySelectorAll(".tablabel")[0]);
+}
+function selectTab(e) {
+    let clickedEl = e.target;
+    let link = clickedEl.querySelector("a");
+    if (link) {
+        link.click();
+    } else {
+        let tabs = clickedEl.closest(".stadium-tabs");
+        let newTabLabel = clickedEl.closest(".tablabel");
+        let newtabnumber = newTabLabel.getAttribute("tabnumber");
+        setActiveTab(tabs, newtabnumber);
+    }
+}
+function isNumber(str) {
+    if (typeof str == "number") return true;
+    return !isNaN(str) && !isNaN(parseFloat(str));
 }
 function slideBorder(tabsC, el, active) {
     let speed = getComputedStyle(el.closest(".stadium-tabs")).getPropertyValue("--stadium-tab-bottom-border-animation-speed").replace("s", "");
@@ -61,7 +97,7 @@ function slideBorder(tabsC, el, active) {
         if (speed > 0) {
             let elWd = el.offsetWidth / tabsC.offsetWidth;
             let tWidth;
-            if (el.getAttribute("tabindex") < active.getAttribute("tabindex")) {
+            if (el.getAttribute("tabnumber") < active.getAttribute("tabnumber")) {
                 tWidth = el.offsetLeft + el.offsetWidth - active.offsetLeft;
             } else {
                 tWidth = active.offsetLeft + active.offsetWidth - el.offsetLeft;
@@ -75,30 +111,11 @@ function slideBorder(tabsC, el, active) {
         }
     }
 }
-function activateTab(e) {
-    let clickedEl = e.target;
-    let link = clickedEl.querySelector("a");
-    if (link) {
-        link.click();
-    } else {
-        let labelContainer = clickedEl.closest(".stadium-tabs").querySelector(".stack-layout-container:nth-child(1)");
-        let tabs = clickedEl.closest(".stadium-tabs");
-        let oldTabLabel = tabs.querySelector(".tablabel.active-tab");
-        let oldTabContent = tabs.querySelector(".tabcontent.active-tab");
-        let newTabLabel = clickedEl.closest(".tablabel");
-        let newTabIndex = newTabLabel.getAttribute("tabindex");
-        let newTabContent = tabs.querySelector(".tabcontent[tabindex='" + newTabIndex + "']");
-        oldTabLabel.classList.remove("active-tab");
-        newTabLabel.classList.add("active-tab");
-        oldTabContent.classList.remove("active-tab");
-        newTabContent.classList.add("active-tab");
-        slideBorder(labelContainer, newTabLabel, oldTabLabel);
-    }
-}
 ```
 
 ## Page.Load Setup
 1. Drag the Global Script called "Tabs" into the Page.Load event handler of each page where tabs are to be shown
+2. Optionally pass in the selected tab number (default is 1)
 
 ## Single-Page Setup
 1. Drag a *Container* control to a page. This will be the main tabs container
