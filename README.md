@@ -10,6 +10,7 @@ https://github.com/stadium-software/tabs/assets/2085324/dc0c3b27-b805-4bab-97be-
 ## Changes
 1.1 Added support for multi-page tabs
 1.2 Added setting selected tab programatically (update JS)
+1.2.1 Fixed 'no-scrollbar bug' for wide tabs (tabs.css only)
 
 # Common Setup
 
@@ -22,7 +23,7 @@ https://github.com/stadium-software/tabs/assets/2085324/dc0c3b27-b805-4bab-97be-
    1. SelectedTab
 3. Drag a Javascript action into the script and paste the Javascript below unaltered into the action
 ```javascript
-/* Stadium Script Version 1.2 https://github.com/stadium-software/tabs */
+/* Stadium Script Version 1.2.1 https://github.com/stadium-software/tabs */
 let selectedTab = ~.Parameters.Input.SelectedTab;
 if (!isNumber(selectedTab)) {
     selectedTab = 1;
