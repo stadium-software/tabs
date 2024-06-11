@@ -9,7 +9,9 @@ https://github.com/stadium-software/tabs/assets/2085324/dc0c3b27-b805-4bab-97be-
 
 ## Changes
 1.1 Added support for multi-page tabs
+
 1.2 Added setting selected tab programatically (update JS)
+
 1.2.1 Fixed 'no-scrollbar bug' for wide tabs (tabs.css only)
 
 # Common Setup
