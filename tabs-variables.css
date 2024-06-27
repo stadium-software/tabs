@@ -1,3 +1,4 @@
+/* v1.3 ---Tabs---*/
 .stadium-tabs {
     --stadium-tab-label-border-top-color: #ccc;
     --stadium-tab-label-border-right-color: #ccc;
@@ -54,7 +55,7 @@
     --stadium-tab-content-left-padding: 32px;
 
     --stadium-tab-bottom-border-animation-speed: 0s;
-    --stadium-tab-label-gap: 0;
+    --stadium-tab-label-gap: 10px;
 }
 
 .tabs-fancy {
