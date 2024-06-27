@@ -54,6 +54,7 @@
     --stadium-tab-content-left-padding: 32px;
 
     --stadium-tab-bottom-border-animation-speed: 0s;
+    --stadium-tab-label-gap: 0;
 }
 
 .tabs-fancy {
@@ -111,6 +112,7 @@
     --stadium-tab-content-left-padding: 32px;
 
     --stadium-tab-bottom-border-animation-speed: 0.6s;
+    --stadium-tab-label-gap: 0;
 }
 
 .tabs-blue {
@@ -168,6 +170,7 @@
     --stadium-tab-content-left-padding: 32px;
 
     --stadium-tab-bottom-border-animation-speed: 0s;
+    --stadium-tab-label-gap: 0;
 }
 
 .tabs-blue-vertical {
@@ -225,4 +228,5 @@
     --stadium-tab-content-left-padding: 32px;
 
     --stadium-tab-bottom-border-animation-speed: 0s;
+    --stadium-tab-label-gap: 0;
 }

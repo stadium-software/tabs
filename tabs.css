@@ -1,5 +1,4 @@
 /*---Tabs---*/
-
 .container-layout.stadium-tabs {
     overflow: hidden;
     margin-top: 10px;
@@ -11,6 +10,7 @@
         width: -webkit-fit-content;
         width: -moz-fit-content;
         width: fit-content;
+        gap: var(--stadium-tab-label-gap);
     }
 
     .tab-content-container {
@@ -57,7 +57,7 @@
     }
 
     .tablabel:has(+ .tablabel) {
-        border-right: 0;
+        /*border-right: 0;*/
     }
 
     .tablabel:hover {
