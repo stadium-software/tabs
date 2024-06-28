@@ -90,7 +90,8 @@
         max-height: 0;
         width: 100%;
         overflow: hidden;
-
+        background-color: var(--stadium-tab-content-background-color);
+        
         &>* {
             opacity: 0;
             transition: opacity 0.3s;

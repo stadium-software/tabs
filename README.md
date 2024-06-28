@@ -14,7 +14,9 @@ https://github.com/stadium-software/tabs/assets/2085324/dc0c3b27-b805-4bab-97be-
 
 1.2.1 Fixed 'no-scrollbar bug' for wide tabs (tabs.css only)
 
-1.3 Added a gap variable for defining the width of the gap to be shown between tabs (default is 0) (both CSS files)
+1.3 Added 
+1. A gap variable for defining the width of the gap to be shown between tabs (default is 0) (both CSS files)
+2. A variable for the content tab background color  (both CSS files)
 
 # Common Setup
 
