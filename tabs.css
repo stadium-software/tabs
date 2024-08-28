@@ -10,7 +10,7 @@
         width: -webkit-fit-content;
         width: -moz-fit-content;
         width: fit-content;
-        gap: var(--stadium-tab-label-gap);
+        gap: var(--stadium-tab-label-gap, 2px);
     }
 
     .tab-content-container {
@@ -25,31 +25,31 @@
         left: 0;
         right: 0;
         bottom: 0;
-        height: var(--stadium-tab-content-border-bottom-size);
+        height: var(--stadium-tab-content-border-bottom-size, 1px);
         scale: var(--_width, 0) 1.125;
         translate: var(--_left, 0) 0;
         transform-origin: left;
-        transition: scale var(--stadium-tab-bottom-border-animation-speed), translate var(--stadium-tab-bottom-border-animation-speed);
-        background: var(--stadium-tab-active-label-font-color);
+        transition: scale var(--stadium-tab-bottom-border-animation-speed, 0s), translate var(--stadium-tab-bottom-border-animation-speed, 0s);
+        background: var(--stadium-tab-active-label-font-color, var(--X-DARK-GREY));
     }
 
     .tablabel {
-        border-top: var(--stadium-tab-label-border-top-size) solid var(--stadium-tab-label-border-top-color);
-        border-right: var(--stadium-tab-label-border-right-size) solid var(--stadium-tab-label-border-right-color);
-        border-bottom: var(--stadium-tab-label-border-bottom-size) solid var(--stadium-tab-label-border-bottom-color);
-        border-left: var(--stadium-tab-label-border-left-size) solid var(--stadium-tab-label-border-left-color);
-        border-top-right-radius: var(--stadium-tab-label-border-radius);
-        border-top-left-radius: var(--stadium-tab-label-border-radius);
+        border-top: var(--stadium-tab-label-border-top-size, 1px) solid var(--stadium-tab-label-border-top-color, var(--BUTTON-BORDER-COLOR));
+        border-right: var(--stadium-tab-label-border-right-size, 1px) solid var(--stadium-tab-label-border-right-color, var(--BUTTON-BORDER-COLOR));
+        border-bottom: var(--stadium-tab-label-border-bottom-size, 1px) solid var(--stadium-tab-label-border-bottom-color, var(--BUTTON-BORDER-COLOR));
+        border-left: var(--stadium-tab-label-border-left-size, 1px) solid var(--stadium-tab-label-border-left-color, var(--BUTTON-BORDER-COLOR));
+        border-top-right-radius: var(--stadium-tab-label-border-radius, 0);
+        border-top-left-radius: var(--stadium-tab-label-border-radius, 0);
         cursor: pointer;
         background-color: inherit;
         margin-top: 0;
         position: relative;
-        padding: var(--stadium-tab-label-top-padding) var(--stadium-tab-label-right-padding) var(--stadium-tab-label-bottom-padding) var(--stadium-tab-label-right-padding);
+        padding: var(--stadium-tab-label-top-padding, 16px) var(--stadium-tab-label-right-padding, 32px) var(--stadium-tab-label-bottom-padding, 16px) var(--stadium-tab-label-right-padding, 32px);
         top: 1px;
-        background-color: var(--stadium-tab-label-background-color);
-        color: var(--stadium-tab-label-font-color);
-        font-weight: var(--stadium-tab-label-font-weight);
-        text-transform: var(--stadium-tab-label-font-case);
+        background-color: var(--stadium-tab-label-background-color, var(--BUTTON-BACKGROUND-COLOR));
+        color: var(--stadium-tab-label-font-color, var(--BUTTON-TEXT-COLOR));
+        font-weight: var(--stadium-tab-label-font-weight, var(--BUTTON-FONT-WEIGHT));
+        text-transform: var(--stadium-tab-label-font-case, var(--BUTTON-TEXT-TRANSFORM));
 
         span, a {
             user-select: none;
@@ -61,23 +61,23 @@
     }
 
     .tablabel:hover {
-        background-color: var(--stadium-tab-label-hover-background-color);
-        color: var(--stadium-tab-label-hover-font-color);
-        font-weight: var(--stadium-tab-label-hover-font-weight);
+        background-color: var(--stadium-tab-label-hover-background-color, var(--BUTTON-HOVER-BACKGROUND-COLOR));
+        color: var(--stadium-tab-label-hover-font-color, var(--BUTTON-HOVER-TEXT-COLOR));
+        font-weight: var(--stadium-tab-label-hover-font-weight, var(--BUTTON-FONT-WEIGHT));
     }
 
     .tablabel.active-tab {
-        border-top: var(--stadium-tab-active-label-border-top-size) solid var(--stadium-tab-active-label-border-top-color);
-        border-right: var(--stadium-tab-active-label-border-right-size) solid var(--stadium-tab-active-label-border-right-color);
-        border-bottom: var(--stadium-tab-active-label-border-bottom-size) solid var(--stadium-tab-active-label-border-bottom-color);
-        border-left: var(--stadium-tab-active-label-border-left-size) solid var(--stadium-tab-active-label-border-left-color);
-        background-color: var(--stadium-tab-active-label-background-color);
+        border-top: var(--stadium-tab-active-label-border-top-size, 1px) solid var(--stadium-tab-active-label-border-top-color, var(--BUTTON-ACTIVE-BORDER-COLOR));
+        border-right: var(--stadium-tab-active-label-border-right-size, 1px) solid var(--stadium-tab-active-label-border-right-color, var(--BUTTON-ACTIVE-BORDER-COLOR));
+        border-bottom: var(--stadium-tab-active-label-border-bottom-size, 0) solid var(--stadium-tab-active-label-border-bottom-color, var(--BODY-BACKGROUND-COLOR));
+        border-left: var(--stadium-tab-active-label-border-left-size, 1px) solid var(--stadium-tab-active-label-border-left-color, var(--BUTTON-ACTIVE-BORDER-COLOR));
+        background-color: var(--stadium-tab-active-label-background-color, var(--BODY-BACKGROUND-COLOR));
         cursor: default;
         pointer-events: none;
 
         span, .btn-link {
-            color: var(--stadium-tab-active-label-font-color);
-            font-weight: var(--stadium-tab-active-label-font-weight);
+            color: var(--stadium-tab-active-label-font-color, var(--BODY-FONT-COLOR));
+            font-weight: var(--stadium-tab-active-label-font-weight, bold);
             cursor: default;
             pointer-events: none;
         }
@@ -90,9 +90,9 @@
         max-height: 0;
         width: 100%;
         overflow: hidden;
-        background-color: var(--stadium-tab-content-background-color);
+        background-color: var(--stadium-tab-content-background-color, var(--BODY-BACKGROUND-COLOR));
         
-        &>* {
+        > * {
             opacity: 0;
             transition: opacity 0.3s;
         }
@@ -100,18 +100,18 @@
 
     .tabcontent.active-tab {
         display: block;
-        padding: var(--stadium-tab-content-top-padding) var(--stadium-tab-content-right-padding) var(--stadium-tab-content-bottom-padding) var(--stadium-tab-content-right-padding);
-        border-top: var(--stadium-tab-content-border-top-size) solid var(--stadium-tab-content-border-top-color);
-        border-right: var(--stadium-tab-content-border-right-size) solid var(--stadium-tab-content-border-right-color);
-        border-bottom: var(--stadium-tab-content-border-bottom-size) solid var(--stadium-tab-content-border-bottom-color);
-        border-left: var(--stadium-tab-content-border-left-size) solid var(--stadium-tab-content-border-left-color);
+        padding: var(--stadium-tab-content-top-padding, 16px) var(--stadium-tab-content-right-padding, 32px) var(--stadium-tab-content-bottom-padding, 16px) var(--stadium-tab-content-right-padding, 32px);
+        border-top: var(--stadium-tab-content-border-top-size, 1px) solid var(--stadium-tab-content-border-top-color, var(--BUTTON-ACTIVE-BORDER-COLOR));
+        border-right: var(--stadium-tab-content-border-right-size, 1px) solid var(--stadium-tab-content-border-right-color, var(--BUTTON-ACTIVE-BORDER-COLOR));
+        border-bottom: var(--stadium-tab-content-border-bottom-size, 1px) solid var(--stadium-tab-content-border-bottom-color, var(--BUTTON-ACTIVE-BORDER-COLOR));
+        border-left: var(--stadium-tab-content-border-left-size, 1px) solid var(--stadium-tab-content-border-left-color, var(--BUTTON-ACTIVE-BORDER-COLOR));
         max-height: fit-content;
 
         > .stack-layout-container {
             overflow: auto;
         }
 
-        &>* {
+        > * {
             opacity: 1;
         }
     }
@@ -129,19 +129,19 @@
     .tablabel {
         top: 0;
         left: 1px;
-        border-top-left-radius: var(--stadium-tab-label-border-radius);
-        border-bottom-left-radius: var(--stadium-tab-label-border-radius);
+        border-top-left-radius: var(--stadium-tab-label-border-radius, 0);
+        border-bottom-left-radius: var(--stadium-tab-label-border-radius, 0);
         border-top-right-radius: 0;
         border-bottom-right-radius: 0;
     }
 
     .tablabel:has(+ .tablabel) {
-        border-right: var(--stadium-tab-active-label-border-right-size) solid var(--stadium-tab-active-label-border-right-color);
+        border-right: var(--stadium-tab-active-label-border-right-size, 1px) solid var(--stadium-tab-active-label-border-right-color, var(--BUTTON-ACTIVE-BORDER-COLOR));
     }
     
     .tablabel.active-tab {
         border-right: 0;
-        border-bottom: var(--stadium-tab-content-border-bottom-size) solid var(--stadium-tab-content-border-bottom-color);
+        border-bottom: var(--stadium-tab-content-border-bottom-size, 1px) solid var(--stadium-tab-content-border-bottom-color, var(--BUTTON-ACTIVE-BORDER-COLOR));
     }
 
     .tabcontent {
@@ -153,13 +153,13 @@
     .active-menu-item,
     .active-menu-item:hover {
         background-color: white;
-        color: #2196f3;
+        color: var(--stadium-tab-label-background-color, var(--MENU-BACKGROUND-COLOR));
     }
 }
 .stack-layout-container:has(.menu-container.stadium-tabs) ~.stack-layout-container div {
     margin-top: 0;
     padding: 10px;
-    border-right: 1px solid grey;
-    border-bottom: 1px solid grey;
-    border-left: 1px solid grey;
+    border-right: 1px solid var(--stadium-tab-active-label-border-top-color, var(--MENU-BORDER-COLOR));
+    border-bottom: 1px solid var(--stadium-tab-active-label-border-top-color, var(--MENU-BORDER-COLOR));
+    border-left: 1px solid var(--stadium-tab-active-label-border-top-color, var(--MENU-BORDER-COLOR));
 }

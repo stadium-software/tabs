@@ -56,7 +56,7 @@
 
     --stadium-tab-bottom-border-animation-speed: 0s;
     
-    --stadium-tab-label-gap: 10px;
+    --stadium-tab-label-gap: 2px;
     --stadium-tab-content-background-color: transparent;
 }
 
@@ -134,11 +134,11 @@
     --stadium-tab-label-bottom-padding: 16px;
     --stadium-tab-label-left-padding: 32px;
 
-    --stadium-tab-label-background-color: #2196f3;
+    --stadium-tab-label-background-color: rgb(33, 150, 243);
     --stadium-tab-label-font-color: #ffffff;
     --stadium-tab-label-font-weight: normal;
     --stadium-tab-label-font-case: uppercase;
-    --stadium-tab-label-hover-background-color: #1976d2;
+    --stadium-tab-label-hover-background-color: rgb(25, 118, 210);
     --stadium-tab-label-hover-font-color: #fff;
     --stadium-tab-label-hover-font-weight: normal;
 
@@ -229,4 +229,4 @@
     --stadium-tab-content-left-padding: 32px;
 
     --stadium-tab-bottom-border-animation-speed: 0s;
- 
+}
