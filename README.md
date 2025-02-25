@@ -1,10 +1,28 @@
-# Tabs
+# Tabs <!-- omit in toc -->
 
 Displaying controls in tabs. Use multi-page tabs to keep the number of controls a page low. 
 
 https://github.com/stadium-software/tabs/assets/2085324/dc0c3b27-b805-4bab-97be-a19b7ae7bfa7
 
-## Version
+## Contents <!-- omit in toc -->
+- [Version](#version)
+  - [Changes](#changes)
+- [Common Setup](#common-setup)
+  - [Application Setup](#application-setup)
+  - [Global Script Setup](#global-script-setup)
+  - [Page.Load Setup](#pageload-setup)
+  - [Single-Page Setup](#single-page-setup)
+  - [Multi-Page Setup](#multi-page-setup)
+- [Display Options](#display-options)
+  - [Horizontal / Vertical Display](#horizontal--vertical-display)
+  - [Tab Icons](#tab-icons)
+  - [Icon Style Classes](#icon-style-classes)
+  - [Applying the CSS](#applying-the-css)
+  - [Customising CSS](#customising-css)
+  - [Implementing styling from an example](#implementing-styling-from-an-example)
+  - [CSS Upgrading](#css-upgrading)
+
+# Version
 1.3
 
 ## Changes
@@ -27,7 +45,8 @@ https://github.com/stadium-software/tabs/assets/2085324/dc0c3b27-b805-4bab-97be-
 1. Create a Global Script and name it "Tabs"
 2. Add an input parameter to the Global Script
    1. SelectedTab
-3. Drag a Javascript action into the script and paste the Javascript below unaltered into the action
+3. Drag a Javascript action into the script and paste the Javascript below into the action
+4. Do not make any changes to any of this script
 ```javascript
 /* Stadium Script Version 1.3 https://github.com/stadium-software/tabs */
 let selectedTab = ~.Parameters.Input.SelectedTab;
@@ -136,7 +155,7 @@ function slideBorder(tabsC, el, active) {
 ![](images/StadiumDesignerTabsView.png)
 
 ## Multi-Page Setup
-In the multi-page setup, we will create the same set of tabs as in thge single-page setup, but instead of *Label* controls for text, we will use *Link* controls. When users click on a tab, the link contained therein must navigate them to another page where we will show the same set of tabs. On each page where we show the tabs, we will indicate which tab should be the active one. 
+In the multi-page setup, we will create the same set of tabs as in the single-page setup, but instead of *Label* controls for text, we will use *Link* controls. When users click on a tab, the link contained therein must navigate them to another page where we will show the same set of tabs. On each page where we show the tabs, we will indicate which tab should be the active one. 
 
 1. Drag *Container* controls to each page where this set of tabs are to show
 2. Assign a class called "stadium-tabs" to each *Container* control
@@ -186,6 +205,7 @@ The CSS below is required for the correct functioning of the module. Some elemen
 1. Open the CSS file called [*tabs-variables.css*](tabs-variables.css) from this repo
 2. Adjust the variables in the *:root* element as you see fit
 3. Overwrite the file in the CSS folder of your application with the customised file
+4. Do not change any CSS other than the variables provided in the *-variables.css file
 
 ## Implementing styling from an example
 In order to use one of the custom examples provided in the example application
