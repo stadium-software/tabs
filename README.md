@@ -7,12 +7,12 @@ https://github.com/stadium-software/tabs/assets/2085324/dc0c3b27-b805-4bab-97be-
 ## Contents <!-- omit in toc -->
 - [Version](#version)
   - [Changes](#changes)
-- [Common Setup](#common-setup)
-  - [Application Setup](#application-setup)
-  - [Global Script Setup](#global-script-setup)
-  - [Page.Load Setup](#pageload-setup)
-  - [Single-Page Setup](#single-page-setup)
-  - [Multi-Page Setup](#multi-page-setup)
+- [Setup](#setup)
+  - [Application](#application)
+  - [Global Script](#global-script)
+  - [Page.Load](#pageload)
+  - [Single-Page](#single-page)
+  - [Multi-Page](#multi-page)
 - [Display Options](#display-options)
   - [Horizontal / Vertical Display](#horizontal--vertical-display)
   - [Tab Icons](#tab-icons)
@@ -36,12 +36,12 @@ https://github.com/stadium-software/tabs/assets/2085324/dc0c3b27-b805-4bab-97be-
 1. A gap variable for defining the width of the gap to be shown between tabs (default is 0) (both CSS files)
 2. A variable for the content tab background color  (both CSS files)
 
-# Common Setup
+# Setup
 
-## Application Setup
+## Application 
 1. Check the *Enable Style Sheet* checkbox in the application properties
 
-## Global Script Setup
+## Global Script 
 1. Create a Global Script and name it "Tabs"
 2. Add an input parameter to the Global Script
    1. SelectedTab
@@ -139,11 +139,11 @@ function slideBorder(tabsC, el, active) {
 }
 ```
 
-## Page.Load Setup
+## Page.Load 
 1. Drag the Global Script called "Tabs" into the Page.Load event handler of each page where tabs are to be shown
 2. Optionally pass in the selected tab number (default is 1)
 
-## Single-Page Setup
+## Single-Page 
 1. Drag a *Container* control to a page. This will be the main tabs container
 2. Assign a class called "stadium-tabs" to the *Container* control
 3. Drag *Label* controls horizontally next to each other into the *Container* to create tabs
@@ -154,7 +154,7 @@ function slideBorder(tabsC, el, active) {
 
 ![](images/StadiumDesignerTabsView.png)
 
-## Multi-Page Setup
+## Multi-Page 
 In the multi-page setup, we will create the same set of tabs as in the single-page setup, but instead of *Label* controls for text, we will use *Link* controls. When users click on a tab, the link contained therein must navigate them to another page where we will show the same set of tabs. On each page where we show the tabs, we will indicate which tab should be the active one. 
 
 1. Drag *Container* controls to each page where this set of tabs are to show
