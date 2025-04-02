@@ -4,17 +4,17 @@
     --stadium-tab-label-border-right-color: #ccc;
     --stadium-tab-label-border-bottom-color: #ccc;
     --stadium-tab-label-border-left-color: #ccc;
-    --stadium-tab-label-border-radius: 0px;
+    --stadium-tab-label-border-radius: 0;
 
-    --stadium-tab-label-border-top-size: 1px;
-    --stadium-tab-label-border-right-size: 1px;
-    --stadium-tab-label-border-bottom-size: 1px;
-    --stadium-tab-label-border-left-size: 1px;
+    --stadium-tab-label-border-top-size: 0.1rem;
+    --stadium-tab-label-border-right-size: 0.1rem;
+    --stadium-tab-label-border-bottom-size: 0.1rem;
+    --stadium-tab-label-border-left-size: 0.1rem;
 
-    --stadium-tab-label-top-padding: 16px;
-    --stadium-tab-label-right-padding: 32px;
-    --stadium-tab-label-bottom-padding: 16px;
-    --stadium-tab-label-left-padding: 32px;
+    --stadium-tab-label-top-padding: 1.6rem;
+    --stadium-tab-label-right-padding: 3.2rem;
+    --stadium-tab-label-bottom-padding: 1.6rem;
+    --stadium-tab-label-left-padding: 3.2rem;
 
     --stadium-tab-label-background-color: #f9f9f9;
     --stadium-tab-label-font-color: inherit;
@@ -30,10 +30,10 @@
     --stadium-tab-active-label-border-bottom-color: #fff;
     --stadium-tab-active-label-border-left-color: #ccc;
 
-    --stadium-tab-active-label-border-top-size: 1px;
-    --stadium-tab-active-label-border-right-size: 1px;
+    --stadium-tab-active-label-border-top-size: 0.1rem;
+    --stadium-tab-active-label-border-right-size: 0.1rem;
     --stadium-tab-active-label-border-bottom-size: 0;
-    --stadium-tab-active-label-border-left-size: 1px;
+    --stadium-tab-active-label-border-left-size: 0.1rem;
 
     --stadium-tab-active-label-background-color: white;
     --stadium-tab-active-label-font-color: #777;
@@ -44,19 +44,19 @@
     --stadium-tab-content-border-bottom-color: #ccc;
     --stadium-tab-content-border-left-color: #ccc;
 
-    --stadium-tab-content-border-top-size: 1px;
-    --stadium-tab-content-border-right-size: 1px;
-    --stadium-tab-content-border-bottom-size: 1px;
-    --stadium-tab-content-border-left-size: 1px;
+    --stadium-tab-content-border-top-size: 0.1rem;
+    --stadium-tab-content-border-right-size: 0.1rem;
+    --stadium-tab-content-border-bottom-size: 0.1rem;
+    --stadium-tab-content-border-left-size: 0.1rem;
 
-    --stadium-tab-content-top-padding: 16px;
-    --stadium-tab-content-right-padding: 32px;
-    --stadium-tab-content-bottom-padding: 16px;
-    --stadium-tab-content-left-padding: 32px;
+    --stadium-tab-content-top-padding: 1.6rem;
+    --stadium-tab-content-right-padding: 3.2rem;
+    --stadium-tab-content-bottom-padding: 1.6rem;
+    --stadium-tab-content-left-padding: 3.2rem;
 
     --stadium-tab-bottom-border-animation-speed: 0s;
     
-    --stadium-tab-label-gap: 2px;
+    --stadium-tab-label-gap: 0.2rem;
     --stadium-tab-content-background-color: transparent;
 }
 
@@ -65,17 +65,17 @@
     --stadium-tab-label-border-right-color: #fff;
     --stadium-tab-label-border-bottom-color: #ccc;
     --stadium-tab-label-border-left-color: #fff;
-    --stadium-tab-label-border-radius: 4px;
+    --stadium-tab-label-border-radius: 0.4rem;
 
-    --stadium-tab-label-border-top-size: 1px;
-    --stadium-tab-label-border-right-size: 1px;
-    --stadium-tab-label-border-bottom-size: 2px;
-    --stadium-tab-label-border-left-size: 1px;
+    --stadium-tab-label-border-top-size: 0.1rem;
+    --stadium-tab-label-border-right-size: 0.1rem;
+    --stadium-tab-label-border-bottom-size: 0.2rem;
+    --stadium-tab-label-border-left-size: 0.1rem;
 
-    --stadium-tab-label-top-padding: 16px;
-    --stadium-tab-label-right-padding: 32px;
-    --stadium-tab-label-bottom-padding: 16px;
-    --stadium-tab-label-left-padding: 32px;
+    --stadium-tab-label-top-padding: 1.6rem;
+    --stadium-tab-label-right-padding: 3.2rem;
+    --stadium-tab-label-bottom-padding: 1.6rem;
+    --stadium-tab-label-left-padding: 3.2rem;
 
     --stadium-tab-label-background-color: #fff;
     --stadium-tab-label-font-color: #333;
@@ -90,10 +90,10 @@
     --stadium-tab-active-label-border-bottom-color: #ccc;
     --stadium-tab-active-label-border-left-color: #fff;
 
-    --stadium-tab-active-label-border-top-size: 1px;
-    --stadium-tab-active-label-border-right-size: 1px;
-    --stadium-tab-active-label-border-bottom-size: 2px;
-    --stadium-tab-active-label-border-left-size: 1px;
+    --stadium-tab-active-label-border-top-size: 0.1rem;
+    --stadium-tab-active-label-border-right-size: 0.1rem;
+    --stadium-tab-active-label-border-bottom-size: 0.2rem;
+    --stadium-tab-active-label-border-left-size: 0.1rem;
 
     --stadium-tab-active-label-background-color: white;
     --stadium-tab-active-label-font-color: #2196f3;
@@ -104,15 +104,15 @@
     --stadium-tab-content-border-bottom-color: #fff;
     --stadium-tab-content-border-left-color: #fff;
 
-    --stadium-tab-content-border-top-size: 1px;
-    --stadium-tab-content-border-right-size: 1px;
-    --stadium-tab-content-border-bottom-size: 2px;
-    --stadium-tab-content-border-left-size: 1px;
+    --stadium-tab-content-border-top-size: 0.1rem;
+    --stadium-tab-content-border-right-size: 0.1rem;
+    --stadium-tab-content-border-bottom-size: 0.2rem;
+    --stadium-tab-content-border-left-size: 0.1rem;
 
-    --stadium-tab-content-top-padding: 16px;
-    --stadium-tab-content-right-padding: 32px;
-    --stadium-tab-content-bottom-padding: 16px;
-    --stadium-tab-content-left-padding: 32px;
+    --stadium-tab-content-top-padding: 1.6rem;
+    --stadium-tab-content-right-padding: 3.2rem;
+    --stadium-tab-content-bottom-padding: 1.6rem;
+    --stadium-tab-content-left-padding: 3.2rem;
 
     --stadium-tab-bottom-border-animation-speed: 0.6s;
 }
@@ -122,17 +122,17 @@
     --stadium-tab-label-border-right-color: #fff;
     --stadium-tab-label-border-bottom-color: #fff;
     --stadium-tab-label-border-left-color: #fff;
-    --stadium-tab-label-border-radius: 4px;
+    --stadium-tab-label-border-radius: 0.4rem;
 
-    --stadium-tab-label-border-top-size: 1px;
-    --stadium-tab-label-border-right-size: 1px;
-    --stadium-tab-label-border-bottom-size: 1px;
-    --stadium-tab-label-border-left-size: 1px;
+    --stadium-tab-label-border-top-size: 0.1rem;
+    --stadium-tab-label-border-right-size: 0.1rem;
+    --stadium-tab-label-border-bottom-size: 0.1rem;
+    --stadium-tab-label-border-left-size: 0.1rem;
 
-    --stadium-tab-label-top-padding: 16px;
-    --stadium-tab-label-right-padding: 32px;
-    --stadium-tab-label-bottom-padding: 16px;
-    --stadium-tab-label-left-padding: 32px;
+    --stadium-tab-label-top-padding: 1.6rem;
+    --stadium-tab-label-right-padding: 3.2rem;
+    --stadium-tab-label-bottom-padding: 1.6rem;
+    --stadium-tab-label-left-padding: 3.2rem;
 
     --stadium-tab-label-background-color: rgb(33, 150, 243);
     --stadium-tab-label-font-color: #ffffff;
@@ -142,10 +142,10 @@
     --stadium-tab-label-hover-font-color: #fff;
     --stadium-tab-label-hover-font-weight: normal;
 
-    --stadium-tab-active-label-border-top-size: 1px;
-    --stadium-tab-active-label-border-right-size: 1px;
-    --stadium-tab-active-label-border-bottom-size: 1px;
-    --stadium-tab-active-label-border-left-size: 1px;
+    --stadium-tab-active-label-border-top-size: 0.1rem;
+    --stadium-tab-active-label-border-right-size: 0.1rem;
+    --stadium-tab-active-label-border-bottom-size: 0.1rem;
+    --stadium-tab-active-label-border-left-size: 0.1rem;
 
     --stadium-tab-active-label-border-top-color: #575757;
     --stadium-tab-active-label-border-right-color: #575757;
@@ -161,15 +161,15 @@
     --stadium-tab-content-border-bottom-color: #fff;
     --stadium-tab-content-border-left-color: #fff;
 
-    --stadium-tab-content-border-top-size: 1px;
-    --stadium-tab-content-border-right-size: 1px;
-    --stadium-tab-content-border-bottom-size: 1px;
-    --stadium-tab-content-border-left-size: 1px;
+    --stadium-tab-content-border-top-size: 0.1rem;
+    --stadium-tab-content-border-right-size: 0.1rem;
+    --stadium-tab-content-border-bottom-size: 0.1rem;
+    --stadium-tab-content-border-left-size: 0.1rem;
 
-    --stadium-tab-content-top-padding: 16px;
-    --stadium-tab-content-right-padding: 32px;
-    --stadium-tab-content-bottom-padding: 16px;
-    --stadium-tab-content-left-padding: 32px;
+    --stadium-tab-content-top-padding: 1.6rem;
+    --stadium-tab-content-right-padding: 3.2rem;
+    --stadium-tab-content-bottom-padding: 1.6rem;
+    --stadium-tab-content-left-padding: 3.2rem;
 
     --stadium-tab-bottom-border-animation-speed: 0s;
 }
@@ -179,17 +179,17 @@
     --stadium-tab-label-border-right-color: #fff;
     --stadium-tab-label-border-bottom-color: #fff;
     --stadium-tab-label-border-left-color: #fff;
-    --stadium-tab-label-border-radius: 4px;
+    --stadium-tab-label-border-radius: 0.4rem;
 
-    --stadium-tab-label-border-top-size: 1px;
-    --stadium-tab-label-border-right-size: 1px;
-    --stadium-tab-label-border-bottom-size: 1px;
-    --stadium-tab-label-border-left-size: 1px;
+    --stadium-tab-label-border-top-size: 0.1rem;
+    --stadium-tab-label-border-right-size: 0.1rem;
+    --stadium-tab-label-border-bottom-size: 0.1rem;
+    --stadium-tab-label-border-left-size: 0.1rem;
 
-    --stadium-tab-label-top-padding: 16px;
-    --stadium-tab-label-right-padding: 32px;
-    --stadium-tab-label-bottom-padding: 16px;
-    --stadium-tab-label-left-padding: 32px;
+    --stadium-tab-label-top-padding: 1.6rem;
+    --stadium-tab-label-right-padding: 3.2rem;
+    --stadium-tab-label-bottom-padding: 1.6rem;
+    --stadium-tab-label-left-padding: 3.2rem;
 
     --stadium-tab-label-background-color: #2196f3;
     --stadium-tab-label-font-color: #ffffff;
@@ -199,10 +199,10 @@
     --stadium-tab-label-hover-font-color: #fff;
     --stadium-tab-label-hover-font-weight: normal;
 
-    --stadium-tab-active-label-border-top-size: 1px;
+    --stadium-tab-active-label-border-top-size: 0.1rem;
     --stadium-tab-active-label-border-right-size: 0;
-    --stadium-tab-active-label-border-bottom-size: 1px;
-    --stadium-tab-active-label-border-left-size: 1px;
+    --stadium-tab-active-label-border-bottom-size: 0.1rem;
+    --stadium-tab-active-label-border-left-size: 0.1rem;
 
     --stadium-tab-active-label-border-top-color: #575757;
     --stadium-tab-active-label-border-right-color: #fff;
@@ -218,15 +218,15 @@
     --stadium-tab-content-border-bottom-color: #575757;
     --stadium-tab-content-border-left-color: #575757;
 
-    --stadium-tab-content-border-top-size: 1px;
-    --stadium-tab-content-border-right-size: 1px;
-    --stadium-tab-content-border-bottom-size: 1px;
-    --stadium-tab-content-border-left-size: 1px;
+    --stadium-tab-content-border-top-size: 0.1rem;
+    --stadium-tab-content-border-right-size: 0.1rem;
+    --stadium-tab-content-border-bottom-size: 0.1rem;
+    --stadium-tab-content-border-left-size: 0.1rem;
 
-    --stadium-tab-content-top-padding: 16px;
-    --stadium-tab-content-right-padding: 32px;
-    --stadium-tab-content-bottom-padding: 16px;
-    --stadium-tab-content-left-padding: 32px;
+    --stadium-tab-content-top-padding: 1.6rem;
+    --stadium-tab-content-right-padding: 3.2rem;
+    --stadium-tab-content-bottom-padding: 1.6rem;
+    --stadium-tab-content-left-padding: 3.2rem;
 
     --stadium-tab-bottom-border-animation-speed: 0s;
 }
