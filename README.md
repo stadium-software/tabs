@@ -13,7 +13,7 @@ Displaying controls in tabs. Use multi-page tabs to reduce the complexity of pag
   - [Page.Load](#pageload)
   - [Single-Page](#single-page)
   - [Multi-Page](#multi-page)
-- [Tab Icons](#tab-icons)
+  - [Tab Icons](#tab-icons)
   - [CSS](#css)
     - [Before v6.12](#before-v612)
     - [v6.12+](#v612)
@@ -168,7 +168,7 @@ In the multi-page setup, we will create the same set of tabs as in the single-pa
 
 ![](images/StadiumDesignerMultiPageTabsView.png)
 
-# Tab Icons
+## Tab Icons
 To display icons in tabs, add classes to the tabs and some CSS to amend the label display.
 
 For example CSS below add the classes "icon-tab" and "tab1" (or tab2 or tab3) to the tab labels.
