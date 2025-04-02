@@ -1,6 +1,6 @@
 # Tabs <!-- omit in toc -->
 
-Displaying controls in tabs. Use multi-page tabs to keep the number of controls a page low. 
+Displaying controls in tabs. Use multi-page tabs to reduce the complexity of pages. 
 
 ![](images/view.gif)
 
