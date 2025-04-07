@@ -180,11 +180,11 @@ Example CSS
 /*Icon Tabs*/
 .container-layout.stadium-tabs .icon-tab {
     /*for all icon tabs*/
-	padding-left: 50px;
-	line-height: 30px;
+	padding-left: 5rem;
+	line-height: 3rem;
     background-repeat: no-repeat;
-    background-size: 26px;
-    background-position: left 16px center;
+    background-size: 2.6rem;
+    background-position: left 1.6rem center;
 }
 /*for the first tab*/
 .tab1 {
