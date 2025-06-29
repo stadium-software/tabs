@@ -11,6 +11,8 @@ Displaying controls in tabs. Use multi-page tabs to reduce the complexity of pag
   - [Application](#application)
   - [Global Script](#global-script)
   - [Page.Load](#pageload)
+    - [Opening a Specific Tab On PageLoad](#opening-a-tab-on-pageload)
+    - [Programatically Opening a Tab](#programatically-opening-a-tab)
   - [Single-Page](#single-page)
   - [Multi-Page](#multi-page)
   - [Tab Icons](#tab-icons)
@@ -141,7 +143,14 @@ function slideBorder(tabsC, el, active) {
 
 ## Page.Load 
 1. Drag the Global Script called "Tabs" into the Page.Load event handler of each page where tabs are to be shown
-2. Optionally pass in the selected tab number (default is 1)
+
+### Opening a Tab On PageLoad
+1. Add a SelectedTab page parameter to the tabs page
+2. Pass in the selected tab number (default is 1)
+
+### Programatically Opening a Tab
+1. Drag the Global Script called "Tabs" into the event handler
+2. Add the tab number to the "SelectedTab" input parameter
 
 ## Single-Page 
 1. Drag a *Container* control to a page. This will be the main tabs container
