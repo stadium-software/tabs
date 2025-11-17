@@ -5,25 +5,23 @@ Displaying controls in tabs. Use multi-page tabs to reduce the complexity of pag
 ![](images/view.gif)
 
 ## Contents <!-- omit in toc -->
-- [Version](#version)
-  - [Changes](#changes)
-- [Setup](#setup)
-  - [Application](#application)
-  - [Global Script](#global-script)
-  - [Page.Load](#pageload)
-    - [Opening a Specific Tab On PageLoad](#opening-a-tab-on-pageload)
-    - [Programatically Opening a Tab](#programatically-opening-a-tab)
-  - [Single-Page](#single-page)
-  - [Multi-Page](#multi-page)
-  - [Tab Icons](#tab-icons)
-  - [CSS](#css)
-    - [Before v6.12](#before-v612)
-    - [v6.12+](#v612)
-    - [Customising CSS](#customising-css)
-  - [Upgrading Stadium Repos](#upgrading-stadium-repos)
+1. [Version](#version)
+   1. [Changes](#changes)
+2. [Setup](#setup)
+   1. [Application](#application)
+   2. [Global Script](#global-script)
+   3. [Page.Load](#pageload)
+      1. [Opening a Tab On PageLoad](#opening-a-tab-on-pageload)
+      2. [Programatically Opening a Tab](#programatically-opening-a-tab)
+   4. [Single-Page](#single-page)
+   5. [Multi-Page](#multi-page)
+   6. [Tab Icons](#tab-icons)
+   7. [CSS](#css)
+      1. [Customising CSS](#customising-css)
+   8. [Upgrading Stadium Repos](#upgrading-stadium-repos)
 
 # Version
-1.3.1
+1.4
 
 ## Changes
 1.1 Added support for multi-page tabs
@@ -38,6 +36,8 @@ Displaying controls in tabs. Use multi-page tabs to reduce the complexity of pag
 
 1.3.1 Changed px to rem; Updated readme for 6.12+; Removed fancy tabs, vertical tabs, iconify library; added css for icon tabs to sample
 
+1.4 Integrated CSS into script; moved icon css into script
+
 # Setup
 
 ## Application 
@@ -50,11 +50,12 @@ Displaying controls in tabs. Use multi-page tabs to reduce the complexity of pag
 3. Drag a Javascript action into the script and paste the Javascript below into the action
 4. Do not make any changes to any of this script
 ```javascript
-/* Stadium Script Version 1.3 https://github.com/stadium-software/tabs */
+/* Stadium Script Version 1.4 https://github.com/stadium-software/tabs */
 let selectedTab = ~.Parameters.Input.SelectedTab;
 if (!isNumber(selectedTab)) {
     selectedTab = 1;
 }
+loadCSS();
 initTabs();
 function initTabs() {
     let tabContainers = document.querySelectorAll(".stadium-tabs");
@@ -139,6 +140,196 @@ function slideBorder(tabsC, el, active) {
         }
     }
 }
+function loadCSS() {
+    let moduleID = "stadium-tabs";
+    if (!document.getElementById(moduleID)) {
+        let cssMain = document.createElement("style");
+        cssMain.id = moduleID;
+        cssMain.type = "text/css";
+        cssMain.textContent = `/* v1.3 ---Tabs---*/
+.container-layout.stadium-tabs {
+    overflow: hidden;
+    margin-top: 1rem;
+    visibility: hidden;
+
+    .tab-label-container {
+        position: relative;
+        display: flex;
+        width: -webkit-fit-content;
+        width: -moz-fit-content;
+        width: fit-content;
+        gap: var(--stadium-tab-label-gap, 0.2rem);
+    }
+
+    .tab-content-container {
+        display: grid;
+        grid-template-columns: 1fr;
+        grid-template-rows: 1fr;
+    }
+
+    .tab-label-container::after {
+        content: "";
+        position: absolute;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        height: var(--stadium-tab-content-border-bottom-size, 0.1rem);
+        scale: var(--_width, 0) 1.125;
+        translate: var(--_left, 0) 0;
+        transform-origin: left;
+        transition: scale var(--stadium-tab-bottom-border-animation-speed, 0s), translate var(--stadium-tab-bottom-border-animation-speed, 0s);
+        background: var(--stadium-tab-active-label-font-color, var(--X-DARK-GREY));
+    }
+
+    .tablabel {
+        border-top: var(--stadium-tab-label-border-top-size, 0.1rem) solid var(--stadium-tab-label-border-top-color, var(--BUTTON-BORDER-COLOR));
+        border-right: var(--stadium-tab-label-border-right-size, 0.1rem) solid var(--stadium-tab-label-border-right-color, var(--BUTTON-BORDER-COLOR));
+        border-bottom: var(--stadium-tab-label-border-bottom-size, 0.1rem) solid var(--stadium-tab-label-border-bottom-color, var(--BUTTON-BORDER-COLOR));
+        border-left: var(--stadium-tab-label-border-left-size, 0.1rem) solid var(--stadium-tab-label-border-left-color, var(--BUTTON-BORDER-COLOR));
+        border-top-right-radius: var(--stadium-tab-label-border-radius, var(--BUTTON-BORDER-RADIUS));
+        border-top-left-radius: var(--stadium-tab-label-border-radius, var(--BUTTON-BORDER-RADIUS));
+        cursor: pointer;
+        background-color: inherit;
+        margin-top: 0;
+        position: relative;
+        padding: var(--stadium-tab-label-top-padding, 1.6rem) var(--stadium-tab-label-right-padding,  3.2rem) var(--stadium-tab-label-bottom-padding, 1.6rem) var(--stadium-tab-label-right-padding,  3.2rem);
+        top: 0.1rem;
+        background-color: var(--stadium-tab-label-background-color, var(--BUTTON-BACKGROUND-COLOR));
+
+        span, .btn-link {
+            user-select: none;
+            text-transform: var(--stadium-tab-label-font-case, var(--BUTTON-TEXT-TRANSFORM));
+            color: var(--stadium-tab-label-font-color, var(--BUTTON-TEXT-COLOR));
+            font-weight: var(--stadium-tab-label-font-weight, var(--BUTTON-FONT-WEIGHT));
+        }
+    }
+
+    .tablabel:hover {
+        background-color: var(--stadium-tab-label-hover-background-color, var(--BUTTON-HOVER-BACKGROUND-COLOR));
+        color: var(--stadium-tab-label-hover-font-color, var(--BUTTON-HOVER-TEXT-COLOR));
+        font-weight: var(--stadium-tab-label-hover-font-weight, var(--BUTTON-FONT-WEIGHT));
+    }
+
+    .tablabel.active-tab {
+        border-top: var(--stadium-tab-active-label-border-top-size, 0.1rem) solid var(--stadium-tab-active-label-border-top-color, var(--BUTTON-ACTIVE-BORDER-COLOR));
+        border-right: var(--stadium-tab-active-label-border-right-size, 0.1rem) solid var(--stadium-tab-active-label-border-right-color, var(--BUTTON-ACTIVE-BORDER-COLOR));
+        border-bottom: var(--stadium-tab-active-label-border-bottom-size, 0) solid var(--stadium-tab-active-label-border-bottom-color, var(--BODY-BACKGROUND-COLOR));
+        border-left: var(--stadium-tab-active-label-border-left-size, 0.1rem) solid var(--stadium-tab-active-label-border-left-color, var(--BUTTON-ACTIVE-BORDER-COLOR));
+        background-color: var(--stadium-tab-active-label-background-color, var(--BODY-BACKGROUND-COLOR));
+        cursor: default;
+        pointer-events: none;
+
+        span, .btn-link {
+            color: var(--stadium-tab-active-label-font-color, var(--BODY-FONT-COLOR));
+            font-weight: var(--stadium-tab-active-label-font-weight, bold);
+            cursor: default;
+            pointer-events: none;
+        }
+    }
+
+    .tabcontent {
+        display: block;
+        border: 0;
+        padding: 0;
+        max-height: 0;
+        width: 100%;
+        overflow: hidden;
+        background-color: var(--stadium-tab-content-background-color, var(--BODY-BACKGROUND-COLOR));
+        
+        > * {
+            opacity: 0;
+            transition: opacity 0.3s;
+        }
+    }
+
+    .tabcontent.active-tab {
+        display: block;
+        padding: var(--stadium-tab-content-top-padding, 1.6rem) var(--stadium-tab-content-right-padding,  3.2rem) var(--stadium-tab-content-bottom-padding, 1.6rem) var(--stadium-tab-content-left-padding,  3.2rem);
+        border-top: var(--stadium-tab-content-border-top-size, 0.1rem) solid var(--stadium-tab-content-border-top-color, var(--BUTTON-ACTIVE-BORDER-COLOR));
+        border-right: var(--stadium-tab-content-border-right-size, 0.1rem) solid var(--stadium-tab-content-border-right-color, var(--BUTTON-ACTIVE-BORDER-COLOR));
+        border-bottom: var(--stadium-tab-content-border-bottom-size, 0.1rem) solid var(--stadium-tab-content-border-bottom-color, var(--BUTTON-ACTIVE-BORDER-COLOR));
+        border-left: var(--stadium-tab-content-border-left-size, 0.1rem) solid var(--stadium-tab-content-border-left-color, var(--BUTTON-ACTIVE-BORDER-COLOR));
+        max-height: fit-content;
+
+        > .stack-layout-container {
+            overflow: auto;
+        }
+
+        > * {
+            opacity: 1;
+        }
+    }
+
+    .tablabel.icon-tab {
+        line-height: 3rem;
+        background-repeat: no-repeat;
+        background-size: var(--stadium-tab-icon-size, 2.6rem);
+        background-position: var(--stadium-tab-icon-position, left) 16px center;
+        padding-left: 5rem;
+    }
+    @container style(--stadium-tab-icon-position: right) {
+        .tablabel.icon-tab {
+            padding-right: 5rem;
+            padding-left: var(--stadium-tab-content-left-padding, 3.2rem);
+        }
+    }
+}
+
+.container-layout.tabs-vertical {
+    display: flex;
+
+    .stack-layout-container:nth-child(1),
+    .stack-layout-container:nth-child(2) {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .tablabel {
+        top: 0;
+        left: 0.1rem;
+        border-top-left-radius: var(--stadium-tab-label-border-radius, var(--BUTTON-BORDER-RADIUS));
+        border-bottom-left-radius: var(--stadium-tab-label-border-radius, var(--BUTTON-BORDER-RADIUS));
+        border-top-right-radius: 0;
+        border-bottom-right-radius: 0;
+    }
+
+    .tablabel:has(+ .tablabel) {
+        border-right: var(--stadium-tab-active-label-border-right-size, 0.1rem) solid var(--stadium-tab-active-label-border-right-color, var(--BUTTON-ACTIVE-BORDER-COLOR));
+    }
+    
+    .tablabel.active-tab {
+        border-right: 0;
+        border-bottom: var(--stadium-tab-content-border-bottom-size, 0.1rem) solid var(--stadium-tab-content-border-bottom-color, var(--BUTTON-ACTIVE-BORDER-COLOR));
+    }
+
+    .tabcontent {
+        flex-grow: 1;
+    }
+}
+.menu-container.stadium-tabs {
+    display: block;
+    .active-menu-item,
+    .active-menu-item:hover {
+        background-color: var(--stadium-tab-label-font-color, var(--BUTTON-HOVER-BACKGROUND-COLOR));
+        span {
+            color: var(--stadium-tab-label-background-color, var(--BUTTON-HOVER-TEXT-COLOR));
+        }
+    }
+}
+.stack-layout-container:has(.menu-container.stadium-tabs) ~.stack-layout-container div {
+    margin-top: 0;
+    padding: 1rem;
+    border-right: 0.1rem solid var(--stadium-tab-active-label-border-top-color, var(--MENU-BORDER-COLOR));
+    border-bottom: 0.1rem solid var(--stadium-tab-active-label-border-top-color, var(--MENU-BORDER-COLOR));
+    border-left: 0.1rem solid var(--stadium-tab-active-label-border-top-color, var(--MENU-BORDER-COLOR));
+}
+html {
+    min-height: 100%;
+    font-size: 62.5%;
+}`;
+        document.head.appendChild(cssMain);
+    }
+}
 ```
 
 ## Page.Load 
@@ -178,23 +369,18 @@ In the multi-page setup, we will create the same set of tabs as in the single-pa
 ![](images/StadiumDesignerMultiPageTabsView.png)
 
 ## Tab Icons
-To display icons in tabs, add classes to the tabs and some CSS to amend the label display.
+To display icons in tabs
+1. Add the "icon-tab" class to the tab label classes property
+2. Add CSS (see below) for each tab icon
+3. Add the relevant class for each 
 
 For example CSS below add the classes "icon-tab" and "tab1" (or tab2 or tab3) to the tab labels.
 
-![](images/IconTabClasses.png)
+![](images/icon-tab-classes.png)
 
-Example CSS
+**Example CSS**
 ```css
 /*Icon Tabs*/
-.container-layout.stadium-tabs .icon-tab {
-    /*for all icon tabs*/
-	padding-left: 5rem;
-	line-height: 3rem;
-    background-repeat: no-repeat;
-    background-size: 2.6rem;
-    background-position: left 1.6rem center;
-}
 /*for the first tab*/
 .tab1 {
     background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='1em' height='1em' viewBox='0 0 24 24'%3E%3C!-- Icon from Material Symbols by Google - https://github.com/google/material-design-icons/blob/master/LICENSE --%3E%3Cpath fill='%23ffffff' d='M5 21q-.825 0-1.412-.587T3 19V5q0-.825.588-1.412T5 3h6.525q.5 0 .75.313t.25.687t-.262.688T11.5 5H5v14h14v-6.525q0-.5.313-.75t.687-.25t.688.25t.312.75V19q0 .825-.587 1.413T19 21zm4-7v-2.425q0-.4.15-.763t.425-.637l8.6-8.6q.3-.3.675-.45t.75-.15q.4 0 .763.15t.662.45L22.425 3q.275.3.425.663T23 4.4t-.137.738t-.438.662l-8.6 8.6q-.275.275-.637.438t-.763.162H10q-.425 0-.712-.288T9 14m12.025-9.6l-1.4-1.4zM11 13h1.4l5.8-5.8l-.7-.7l-.725-.7L11 11.575zm6.5-6.5l-.725-.7zl.7.7z'/%3E%3C/svg%3E");
@@ -219,24 +405,7 @@ Example CSS
 ```
 
 ## CSS
-The CSS below is required for the correct functioning of the module. Variables exposed in the [*tabs-variables.css*](tabs-variables.css) file can be [customised](#customising-css).
-
-### Before v6.12
-1. Create a folder called "CSS" inside of your Embedded Files in your application
-2. Drag the two CSS files from this repo [*tabs-variables.css*](tabs-variables.css) and [*tabs.css*](tabs.css) into that folder
-3. Paste the link tags below into the *head* property of your application
-```html
-<link rel="stylesheet" href="{EmbeddedFiles}/CSS/tabs.css">
-<link rel="stylesheet" href="{EmbeddedFiles}/CSS/tabs-variables.css">
-``` 
-
-### v6.12+
-1. Create a folder called "CSS" inside of your Embedded Files in your application
-2. Drag the CSS files from this repo [*tabs.css*](tabs.css) into that folder
-3. Paste the link tag below into the *head* property of your application
-```html
-<link rel="stylesheet" href="{EmbeddedFiles}/CSS/tabs.css">
-``` 
+Optionally you can customise selected aspects of the tabs display by changing the variables exposed in the [*tabs-variables.css*](tabs-variables.css) file.
 
 ### Customising CSS
 1. Open the CSS file called [*tabs-variables.css*](tabs-variables.css) from this repo
@@ -248,8 +417,6 @@ The CSS below is required for the correct functioning of the module. Variables e
 <link rel="stylesheet" href="{EmbeddedFiles}/CSS/tabs-variables.css">
 ``` 
 6. Add the file to the "CSS" inside of your Embedded Files in your application
-
-**NOTE: Do not change any of the CSS in the 'tabs.css' file**
 
 ## Upgrading Stadium Repos
 Stadium Repos are not static. They change as additional features are added and bugs are fixed. Using the right method to work with Stadium Repos allows for upgrading them in a controlled manner. 
